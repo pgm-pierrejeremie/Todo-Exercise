@@ -9,12 +9,15 @@ import Logger from './lib/Logger.js';
 import authenticate from './actions/auth/index.js';
 import registerTodoEndpoints from './actions/todo/registerTodoEndpoints.js';
 import middleware from './middleware/index.js';
-
+import cors from 'cors';
 // create a new express application
 const app = Express();
 
 // init dotenv
-dotenv.config();
+dotenv.config()
+
+// enable cors
+app.use(cors());
 
 // add json body parser
 app.use(bodyParser.json());
